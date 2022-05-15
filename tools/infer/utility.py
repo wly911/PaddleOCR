@@ -42,10 +42,10 @@ def init_args():
     parser.add_argument("--gpu_mem", type=int, default=500)
 
     # params for text detector
-    parser.add_argument("--image_dir", type=str, default='C:\\Users\\Admin\\Documents\\WeChat Files\\carrion_soul\\FileStorage\\File\\2022-05\\QSZ92-5.8.png')
+    parser.add_argument("--image_dir", type=str, default='../../../doc/3238.jpg')
     parser.add_argument("--det_algorithm", type=str, default='DB')
-    parser.add_argument("--det_model_dir", type=str, default='D:\\workspace\\PaddleOCR-release-2.3\\pmodel\\ch_ppocr_server_v2.0_det_infer')
-    parser.add_argument("--sophgo_det_model_dir", type=str, default='D:\\workspace\\PaddleOCR-release-2.3\\bmodel\\ch_ppocr_server_v2.0_det_infer\\compilation.bmodel')
+    parser.add_argument("--det_model_dir", type=str, default='/tmp/pmodel/det_model/ch_db_mv3_inference')
+    parser.add_argument("--sophgo_det_model_dir", type=str, default='/home/workspace/det_model/compilation.bmodel')
     parser.add_argument("--det_limit_side_len", type=float, default=1920)
     parser.add_argument("--det_limit_type", type=str, default='max')
 
@@ -69,7 +69,7 @@ def init_args():
     # params for text recognizer
     parser.add_argument("--rec_algorithm", type=str, default='CRNN')
     parser.add_argument("--rec_model_dir", type=str)
-    parser.add_argument("--sophgo_rec_model_dir", type=str,default='D:\\workspace\\PaddleOCR-release-2.3\\bmodel\\ch_ppocr_server_v2.0_rec_infer\\compilation.bmodel')
+    parser.add_argument("--sophgo_rec_model_dir", type=str,default='/home/workspace/rec_model/compilation.bmodel')
     parser.add_argument("--rec_image_shape", type=str, default="3, 32, 320")
     parser.add_argument("--rec_char_type", type=str, default='ch')
     parser.add_argument("--rec_batch_num", type=int, default=6)
@@ -100,9 +100,8 @@ def init_args():
     # params for text classifier
     parser.add_argument("--use_angle_cls", type=str2bool, default=False)
     parser.add_argument("--cls_model_dir", type=str)
-    parser.add_argument("--sophgo_cls_model_dir", type=str,default='D:\\workspace\\PaddleOCR-release-2.3\\bmodel\\ch_ppocr_mobile_v2.0_cls_infer\\compilation.bmodel')
+    parser.add_argument("--sophgo_cls_model_dir", type=str,default='/home/workspace/cls_model/compilation.bmodel')
     parser.add_argument("--cls_image_shape", type=str, default="3, 48, 192")
-    parser.add_argument("--sophgo_cls_model_dir", type=str,default='D:\\workspace\\PaddleOCR-release-2.3\\bmodel\\ch_ppocr_server_v2.0_rec_infer\\compilation.bmodel')
     parser.add_argument("--label_list", type=list, default=['0', '180'])
     parser.add_argument("--cls_batch_num", type=int, default=6)
     parser.add_argument("--cls_thresh", type=float, default=0.9)
