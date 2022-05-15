@@ -102,6 +102,21 @@ class TextDetector(object):
         self.input_name = self.predictor.get_input_names(self.graph_name)[0]
         self.input_shape = self.predictor.get_input_shape(self.graph_name, self.input_name)
         self.output_names = self.predictor.get_output_names(self.graph_name)
+        self.output_shape = self.predictor.get_output_shape(self.graph_name, self.output_name)
+        self.out_dtype = self.predictor.get_output_dtype(self.graph_name, self.output_name)
+        print('===================graph_name===================')
+        print(self.predictor.get_graph_names())
+        print('===================input_name===================')
+        print(self.predictor.get_input_names())
+        print('===================input_shape===================')
+        print(self.predictor.get_input_shape())
+        print('===================output_names===================')
+        print(self.predictor.get_output_names())
+        print('===================output_shape===================')
+        print(self.predictor.get_output_shape())
+        print('===================out_dtype===================')
+        print(self.predictor.get_output_dtype())
+        print('===================end===================')
 
         if args.benchmark:
             import auto_log
